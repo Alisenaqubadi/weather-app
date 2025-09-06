@@ -1,0 +1,25 @@
+.mincontainer{
+    grid-area: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.icon {
+    /* grid-area: 5/1/span 8/span 8; */
+    height: min(100%,338px);
+    width: min(100%,338px);
+}
+
+.temp {
+    color: white;
+    font-size: min(12vw,200px);
+    margin: auto auto auto 0;
+    position: relative;
+    right: 5vw;
+}
+
+.temp-type {
+    position: relative;
+    width: 16vw;
+    right: 15vw;
+}

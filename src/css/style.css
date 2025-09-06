@@ -1,0 +1,27 @@
+:root {
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url(/src/images/cosmos-1866820_1920.jpg);
+  background-position: center;
+}
+
+.header {
+  flex: 1;
+  display: flex;
+}
+
+.container {
+  flex: 10;
+  display: grid;
+  grid-template-columns:1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
