@@ -1,7 +1,33 @@
 .search-bar {
   flex: 10;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  margin: auto;
+  margin-left: 8%;
+  height: 80%;
+  width: 95%;
+  border-radius: 10px;
+  background: var(--bgcolor);
+  padding-left: 3%;
+  font-size: 120%;
+}
+
+input:focus-visible {
+  outline: none;
 }
 
 .temp-change-key {
-  flex: 2;
+  flex: 3;
+  display: flex;
+}
+
+button {
+  flex: 1;
+  border-radius: 10px;
+  height: 80%;
+  margin: 10px;
+  background: black;
 }

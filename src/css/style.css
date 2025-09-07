@@ -1,9 +1,11 @@
 :root {
+  --bgcolor: rgba(37, 34, 34, 0.9);
 }
 
 * {
   padding: 0;
   margin: 0;
+  color: white;
 }
 
 body {
@@ -12,6 +14,8 @@ body {
   flex-direction: column;
   background-image: url(/src/images/cosmos-1866820_1920.jpg);
   background-position: center;
+  width: min(957px,100%);
+  margin: auto;
 }
 
 .header {
@@ -21,7 +25,5 @@ body {
 
 .container {
   flex: 10;
-  display: grid;
-  grid-template-columns:1fr;
-  grid-template-rows: repeat(3, 1fr);
+  display: flex;
 }

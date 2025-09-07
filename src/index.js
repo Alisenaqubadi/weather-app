@@ -2,20 +2,33 @@ import './css/style.css'
 import './css/header.css'
 import './css/container.css'
 import { main as container } from './js/container'
+import { main as header } from './js/header'
 
-async function getDate(city, regionName) {
-  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city},${regionName}?key=RYVF4R37Y79NDYLDYNXVYBM75`
-  const resopnse = await fetch(url, { mode: 'cors' })
-  resopnse.json().then((resopnse) => {
-    console.log(resopnse.currentConditions)
-    container(resopnse.currentConditions)
-  })
+const buttonfah = document.querySelector('.fah')
+const buttoncel = document.querySelector('.cel')
+const a = true;
+const b = false;
+
+async function getDate(city) {
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=PAYT2JBQ4R9LA9ZZ5BSEC9VG5`
+  const response = await fetch(url, { mode: 'cors' });
+  const data = await response.json();
+
+  console.log(data.currentConditions);
+  console.log(data);
+  container(data.currentConditions, data);
+
+  buttonfah.addEventListener("click", () => {
+    container(data.currentConditions, data, a);
+  });
+  buttoncel.addEventListener("click", () => {
+    container(data.currentConditions, data, b);
+  });
 }
 
 async function getCity(useCallback) {
   const res = await fetch('http://ip-api.com/json/')
   let city
-  let regionName
   res
     .json()
     .then(async (data) => {
@@ -24,11 +37,18 @@ async function getCity(useCallback) {
       console.log('Region:', data.regionName) // Tashkent
       console.log('Country:', data.country)
       city = await data.city
-      regionName = await data.regionName
     })
     .then(() => {
-      useCallback(city, regionName)
+      useCallback(city,)
     })
 }
 
 getCity(getDate)
+header();
+
+
+
+
+export {
+  getDate,
+}
